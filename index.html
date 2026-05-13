@@ -1,826 +1,1302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portofolio Alfin Cahya Putra Wibowo — Administrative Staff, Banking Operations, Multimedia & Web Support." />
   <title>Alfin Cahya Putra Wibowo | Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
+    /* =========================================================
+       PORTFOLIO WEBSITE — ALFIN CAHYA PUTRA WIBOWO
+    ========================================================= */
+
+    :root {
+      --bg-main: #08090b;
+      --bg-soft: #0f1117;
+      --bg-card: #151821;
+      --bg-card-2: #10131a;
+      --text-main: #f4f6fb;
+      --text-muted: #aeb6c7;
+      --text-soft: #d5d9e4;
+      --border: rgba(255, 255, 255, 0.1);
+      --border-strong: rgba(255, 255, 255, 0.18);
+      --accent: #7dd3fc;
+      --accent-2: #d7dde8;
+      --shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 999px;
+      --container: 1180px;
     }
 
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:#0d0d0d;
-      color:#f5f5f5;
-      line-height:1.7;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    ::selection{
-      background:#666;
-      color:#fff;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
     }
 
-    .navbar{
-      width:100%;
-      position:fixed;
-      top:0;
-      left:0;
-      background:rgba(15,15,15,0.95);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid #222;
-      z-index:999;
-      padding:18px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(125, 211, 252, 0.12), transparent 32%),
+        radial-gradient(circle at top right, rgba(215, 221, 232, 0.08), transparent 28%),
+        linear-gradient(180deg, #08090b 0%, #0b0d12 45%, #08090b 100%);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
     }
 
-    .logo{
-      font-size:18px;
-      font-weight:bold;
-      letter-spacing:2px;
-      color:#fff;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .nav-links{
-      display:flex;
-      gap:25px;
+    ul {
+      list-style: none;
     }
 
-    .nav-links a{
-      text-decoration:none;
-      color:#bdbdbd;
-      font-size:14px;
-      transition:0.3s;
+    /* =========================================================
+       NAVIGATION BAR
+    ========================================================= */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(8, 9, 11, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
     }
 
-    .nav-links a:hover{
-      color:#fff;
+    .navbar {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    section{
-      min-height:100vh;
-      padding:140px 8% 80px;
-      border-bottom:1px solid #1f1f1f;
+    .brand {
+      display: flex;
+      flex-direction: column;
+      min-width: 210px;
     }
 
-    .hero{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+    .brand strong {
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+      color: var(--text-main);
     }
 
-    .hero h1{
-      font-size:60px;
-      line-height:1.1;
-      margin-bottom:20px;
-      color:#fff;
+    .brand span {
+      font-size: 0.76rem;
+      color: var(--text-muted);
     }
 
-    .hero h2{
-      font-size:22px;
-      color:#9e9e9e;
-      margin-bottom:25px;
-      font-weight:normal;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 2px;
     }
 
-    .hero p{
-      max-width:800px;
-      color:#cfcfcf;
-      font-size:18px;
+    .nav-links::-webkit-scrollbar {
+      display: none;
     }
 
-    .contact-top{
-      margin-top:30px;
-      color:#9d9d9d;
-      font-size:15px;
+    .nav-links a {
+      flex: 0 0 auto;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      padding: 8px 11px;
+      border-radius: var(--radius-sm);
+      transition: 0.25s ease;
     }
 
-    .section-title{
-      font-size:42px;
-      margin-bottom:40px;
-      color:#fff;
-      position:relative;
+    .nav-links a:hover {
+      color: var(--text-main);
+      border-color: var(--border-strong);
+      background: rgba(255, 255, 255, 0.055);
     }
 
-    .section-title::after{
-      content:'';
-      width:80px;
-      height:4px;
-      background:#555;
-      position:absolute;
-      left:0;
-      bottom:-15px;
-      border-radius:10px;
+    /* =========================================================
+       GLOBAL LAYOUT
+    ========================================================= */
+
+    main {
+      padding-top: 78px;
     }
 
-    .about-text{
-      max-width:1000px;
-      color:#d0d0d0;
-      font-size:18px;
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 92px 22px;
+      position: relative;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-      margin-top:50px;
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.015));
     }
 
-    .card{
-      background:#151515;
-      border:1px solid #262626;
-      padding:30px;
-      border-radius:18px;
-      transition:0.3s;
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
-    .card:hover{
-      transform:translateY(-5px);
-      border-color:#4d4d4d;
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 13px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
-    .card h3{
-      margin-bottom:20px;
-      color:#fff;
-      font-size:24px;
+    .section-title {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      margin-bottom: 18px;
     }
 
-    .card ul{
-      padding-left:20px;
-      color:#c7c7c7;
+    .section-subtitle {
+      max-width: 850px;
+      color: var(--text-muted);
+      font-size: clamp(1rem, 1.6vw, 1.16rem);
+      margin-bottom: 34px;
     }
 
-    .card li{
-      margin-bottom:10px;
+    .muted {
+      color: var(--text-muted);
     }
 
-    .project{
-      background:#141414;
-      border:1px solid #252525;
-      border-radius:20px;
-      padding:40px;
-      margin-top:40px;
+    .accent {
+      color: var(--accent);
     }
 
-    .project-number{
-      color:#7a7a7a;
-      letter-spacing:2px;
-      font-size:14px;
-      margin-bottom:15px;
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--border);
+      margin: 28px 0;
     }
 
-    .project h3{
-      font-size:34px;
-      margin-bottom:25px;
+    .grid {
+      display: grid;
+      gap: 22px;
     }
 
-    .project p{
-      color:#c9c9c9;
-      margin-bottom:25px;
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .project-content{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .project-content h4{
-      margin-bottom:15px;
-      color:#fff;
+    .card {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025)),
+        var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
 
-    .project-content ul{
-      padding-left:20px;
-      color:#bfbfbf;
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(125, 211, 252, 0.35);
+      background:
+        linear-gradient(180deg, rgba(125, 211, 252, 0.07), rgba(255, 255, 255, 0.025)),
+        var(--bg-card);
     }
 
-    .project-content li{
-      margin-bottom:10px;
+    .card h3 {
+      font-size: 1.15rem;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
     }
 
-    .works{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-      margin-top:40px;
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
     }
 
-    .work-box{
-      height:220px;
-      background:#1a1a1a;
-      border:1px dashed #444;
-      border-radius:16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#7d7d7d;
-      text-align:center;
-      padding:20px;
+    .card ul {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
     }
 
-    .small-note{
-      margin-top:30px;
-      color:#8a8a8a;
-      font-size:14px;
+    .card li {
+      position: relative;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      padding-left: 18px;
     }
 
-    .timeline{
-      margin-top:50px;
-      display:flex;
-      flex-direction:column;
-      gap:30px;
+    .card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(125, 211, 252, 0.55);
     }
 
-    .timeline-item{
-      background:#151515;
-      border-left:4px solid #555;
-      padding:25px;
-      border-radius:10px;
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
     }
 
-    .timeline-item h3{
-      margin-bottom:8px;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--text-soft);
+      font-size: 0.82rem;
+      font-weight: 550;
     }
 
-    .timeline-item span{
-      color:#8f8f8f;
-      font-size:14px;
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
     }
 
-    .skills-container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-      margin-top:50px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-weight: 700;
+      border: 1px solid var(--border-strong);
+      transition: 0.25s ease;
     }
 
-    .skill-box{
-      background:#151515;
-      border-radius:18px;
-      padding:30px;
-      border:1px solid #262626;
+    .btn-primary {
+      background: var(--text-main);
+      color: #08090b;
     }
 
-    .skill-box h3{
-      margin-bottom:20px;
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(255, 255, 255, 0.12);
     }
 
-    .skill-box ul{
-      padding-left:20px;
-      color:#cfcfcf;
+    .btn-secondary {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.055);
     }
 
-    .skill-box li{
-      margin-bottom:12px;
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(125, 211, 252, 0.45);
+      background: rgba(125, 211, 252, 0.09);
     }
 
-    .contact-section{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:flex-start;
+    /* =========================================================
+       HERO / COVER
+    ========================================================= */
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 34px;
+      align-items: stretch;
     }
 
-    .contact-section h2{
-      font-size:54px;
-      margin-bottom:20px;
+    .hero-panel {
+      padding: clamp(34px, 6vw, 68px);
+      border-radius: 36px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top right, rgba(125, 211, 252, 0.18), transparent 38%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+        #10131a;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
     }
 
-    .contact-section p{
-      color:#c7c7c7;
-      font-size:18px;
-      margin-bottom:15px;
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -90px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 1px solid rgba(125, 211, 252, 0.18);
+      background: rgba(125, 211, 252, 0.035);
     }
 
-    .contact-links{
-      margin-top:25px;
+    .hero-title {
+      font-size: clamp(2.6rem, 7vw, 6.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+      max-width: 850px;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
     }
 
-    .contact-links a{
-      display:block;
-      color:#fff;
-      text-decoration:none;
-      margin-bottom:15px;
-      font-size:18px;
-      transition:0.3s;
+    .hero-headline {
+      color: var(--accent);
+      font-size: clamp(1rem, 2vw, 1.34rem);
+      font-weight: 750;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
     }
 
-    .contact-links a:hover{
-      color:#9a9a9a;
+    .hero-description {
+      max-width: 760px;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      position: relative;
+      z-index: 1;
     }
 
-    footer{
-      padding:30px;
-      text-align:center;
-      color:#6f6f6f;
-      font-size:14px;
-      background:#0a0a0a;
+    .hero-side {
+      display: grid;
+      gap: 18px;
     }
 
-    @media(max-width:768px){
+    .info-card {
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
 
-      .navbar{
-        flex-direction:column;
-        gap:15px;
+    .info-card span {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .info-card strong,
+    .info-card a {
+      font-size: 1rem;
+      color: var(--text-main);
+      word-break: break-word;
+    }
+
+    /* =========================================================
+       PROJECT DETAIL
+    ========================================================= */
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .project-number {
+      font-size: clamp(3rem, 10vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.08em;
+      color: rgba(255, 255, 255, 0.12);
+      margin-bottom: 20px;
+    }
+
+    .project-meta {
+      display: grid;
+      gap: 16px;
+    }
+
+    .meta-block {
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid var(--border);
+    }
+
+    .meta-block span {
+      display: block;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .meta-block p {
+      color: var(--text-soft);
+      font-size: 0.96rem;
+    }
+
+    /* =========================================================
+       EXPERIENCE / TIMELINE
+    ========================================================= */
+
+    .experience-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .experience-company {
+      font-size: clamp(1.7rem, 3vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      margin-bottom: 12px;
+    }
+
+    .role {
+      color: var(--accent);
+      font-weight: 750;
+      margin-bottom: 8px;
+    }
+
+    .date-location {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    /* =========================================================
+       CONTACT / FOOTER
+    ========================================================= */
+
+    .contact-card {
+      text-align: center;
+      padding: clamp(34px, 7vw, 70px);
+    }
+
+    .contact-name {
+      font-size: clamp(2rem, 5vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: -0.065em;
+      margin-bottom: 18px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.025);
+      padding: 28px 22px;
+      color: var(--text-muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 980px) {
+      .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
       }
 
-      .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
+      main {
+        padding-top: 125px;
       }
 
-      .hero h1{
-        font-size:42px;
+      html {
+        scroll-padding-top: 140px;
       }
 
-      .section-title{
-        font-size:34px;
+      .nav-links {
+        width: 100%;
       }
 
-      .project-content{
-        grid-template-columns:1fr;
+      .hero-layout,
+      .project-layout,
+      .experience-card,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
       }
 
-      section{
-        padding:140px 6% 80px;
+      .slide {
+        min-height: auto;
+        padding: 72px 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        min-width: auto;
+      }
+
+      .brand strong {
+        font-size: 0.9rem;
+      }
+
+      .nav-links a {
+        font-size: 0.74rem;
+        padding: 7px 9px;
+      }
+
+      .hero-panel,
+      .card,
+      .contact-card {
+        border-radius: 24px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .button-row,
+      .contact-links {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <div class="navbar">
-    <div class="logo">Portfolio</div>
-
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#projects">Projects</a>
-      <a href="#works">Works</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero">
-
-    <h1>ALFIN CAHYA<br>PUTRA WIBOWO</h1>
-
-    <h2>
-      BANKING ADMINISTRATION & FINANCIAL OPERATIONS SPECIALIST
-    </h2>
-
-    <p>
-      SWIFT Transactions (MT103/MT199) | Corporate Documentation | Multi-Bank Management
-    </p>
-
-    <div class="contact-top">
-      Jakarta, Indonesia<br>
-      alfnchyaptraaa@gmail.com<br>
-      linkedin.com/in/alfnchyaptra/
-    </div>
-
-    <br><br>
-
-    <p>
-      Berpengalaman dalam mengelola operasional perbankan perusahaan,
-      transaksi internasional (SWIFT), serta dokumentasi korporasi
-      secara terstruktur, akurat, dan sesuai regulasi.
-    </p>
-
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-
-    <h2 class="section-title">ABOUT ME</h2>
-
-    <div class="about-text">
-      <p>
-        Saya merupakan profesional dengan latar belakang Multimedia
-        yang berkembang di bidang administrasi perbankan dan operasional
-        keuangan. Saat ini saya memiliki pengalaman langsung dalam
-        mengelola puluhan rekening perusahaan, menangani transaksi
-        SWIFT internasional, serta menyusun berbagai dokumen resmi perusahaan.
-      </p>
-
-      <br>
-
-      <p>
-        Saya terbiasa bekerja dengan tingkat ketelitian tinggi,
-        memastikan setiap transaksi dan dokumentasi berjalan sesuai
-        prosedur dan regulasi yang berlaku. Selain itu, kemampuan saya
-        di bidang desain dan presentasi juga mendukung komunikasi bisnis
-        yang lebih efektif, baik secara internal maupun eksternal.
-      </p>
-
-      <br>
-
-      <p>
-        Saya memiliki ketertarikan untuk terus berkembang dalam bidang
-        financial operations, banking administration, dan corporate compliance.
-      </p>
-    </div>
-
-  </section>
-
-  <!-- EXPERTISE -->
-  <section id="expertise">
-
-    <h2 class="section-title">CORE EXPERTISE</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Banking & Financial Operations</h3>
-
-        <ul>
-          <li>Pengelolaan rekening perusahaan (50+ account)</li>
-          <li>Transaksi SWIFT (MT103, MT199)</li>
-          <li>Monitoring transaksi internasional</li>
-          <li>Internet Banking Token Management</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Corporate Administration</h3>
-
-        <ul>
-          <li>Penyusunan dokumen resmi (MoU, DoA, surat pernyataan)</li>
-          <li>Invoice & rekonsiliasi keuangan</li>
-          <li>Korespondensi dengan bank & instansi</li>
-          <li>Pelaporan LKPM melalui sistem OSS</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Digital & Creative Skills</h3>
-
-        <ul>
-          <li>Pembuatan company profile</li>
-          <li>Desain presentasi bisnis</li>
-          <li>Web development dasar</li>
-          <li>Editing multimedia</li>
-        </ul>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-
-    <h2 class="section-title">PROJECTS</h2>
-
-    <!-- PROJECT 1 -->
-    <div class="project">
-
-      <div class="project-number">PROJECT 01</div>
-
-      <h3>Managing Corporate Bank Accounts & Multi-Bank Tokens</h3>
-
-      <p>
-        Saya bertanggung jawab dalam pengelolaan lebih dari
-        50 rekening perusahaan yang tersebar di berbagai bank nasional.
-      </p>
-
-      <div class="project-content">
-
-        <div>
-          <h4>Key Responsibilities</h4>
-
-          <ul>
-            <li>Mengelola pembukaan dan administrasi rekening perusahaan</li>
-            <li>Mengimplementasikan dan mengatur lebih dari 50 token internet banking</li>
-            <li>Berkoordinasi dengan berbagai bank terkait kebutuhan operasional</li>
-            <li>Menyusun dokumentasi pendukung untuk kepatuhan dan audit</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Impact</h4>
-
-          <ul>
-            <li>Meningkatkan efisiensi pengelolaan rekening perusahaan</li>
-            <li>Meminimalisir kesalahan administrasi dan akses perbankan</li>
-            <li>Memastikan kelancaran operasional transaksi harian</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- PROJECT 2 -->
-    <div class="project">
-
-      <div class="project-number">PROJECT 02</div>
-
-      <h3>SWIFT Transaction Handling (MT103 & MT199)</h3>
-
-      <p>
-        Menangani proses transaksi internasional menggunakan sistem SWIFT,
-        termasuk monitoring dan koordinasi lintas bank.
-      </p>
-
-      <div class="project-content">
-
-        <div>
-          <h4>Key Responsibilities</h4>
-
-          <ul>
-            <li>Memproses transaksi MT103 dan MT199</li>
-            <li>Melakukan follow-up dengan bank pengirim dan penerima</li>
-            <li>Memastikan kelengkapan data transaksi</li>
-            <li>Mengatasi kendala seperti delay atau ketidaksesuaian data</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Impact</h4>
-
-          <ul>
-            <li>Memastikan transaksi berjalan tepat waktu dan sesuai prosedur</li>
-            <li>Mengurangi risiko kesalahan dalam transaksi internasional</li>
-            <li>Meningkatkan kepercayaan klien terhadap layanan perusahaan</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- PROJECT 3 -->
-    <div class="project">
-
-      <div class="project-number">PROJECT 03</div>
-
-      <h3>Corporate Documentation & Legal Administration</h3>
-
-      <p>
-        Mengelola berbagai dokumen resmi perusahaan untuk kebutuhan bisnis dan kerja sama.
-      </p>
-
-      <div class="project-content">
-
-        <div>
-          <h4>Key Responsibilities</h4>
-
-          <ul>
-            <li>Menyusun dan meninjau dokumen seperti MoU, DoA, dan surat resmi</li>
-            <li>Menyesuaikan dokumen dengan kebutuhan klien dan instansi</li>
-            <li>Menjaga kerapihan dan arsip dokumentasi perusahaan</li>
-            <li>Berkoordinasi dengan pihak internal dan eksternal</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Impact</h4>
-
-          <ul>
-            <li>Meningkatkan kualitas dan profesionalitas dokumen perusahaan</li>
-            <li>Mempercepat proses kerja sama bisnis</li>
-            <li>Mengurangi potensi kesalahan dalam dokumen legal</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- PROJECT 4 -->
-    <div class="project">
-
-      <div class="project-number">PROJECT 04</div>
-
-      <h3>LKPM Reporting (OSS System)</h3>
-
-      <p>
-        Melakukan pelaporan kegiatan penanaman modal secara berkala melalui sistem OSS.
-      </p>
-
-      <div class="project-content">
-
-        <div>
-          <h4>Key Responsibilities</h4>
-
-          <ul>
-            <li>Menyusun laporan LKPM triwulanan</li>
-            <li>Menginput data sesuai ketentuan OSS</li>
-            <li>Memastikan kepatuhan terhadap regulasi pelaporan</li>
-            <li>Melakukan pengecekan data sebelum submit</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Impact</h4>
-
-          <ul>
-            <li>Memastikan perusahaan patuh terhadap regulasi pemerintah</li>
-            <li>Menghindari potensi sanksi akibat keterlambatan laporan</li>
-            <li>Menjaga akurasi data investasi perusahaan</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- PROJECT 5 -->
-    <div class="project">
-
-      <div class="project-number">PROJECT 05</div>
-
-      <h3>Company Profile & Business Presentation Design</h3>
-
-      <p>
-        Mengembangkan materi visual untuk mendukung kebutuhan bisnis dan komunikasi dengan klien.
-      </p>
-
-      <div class="project-content">
-
-        <div>
-          <h4>Key Responsibilities</h4>
-
-          <ul>
-            <li>Mendesain company profile</li>
-            <li>Membuat presentasi untuk klien dan internal</li>
-            <li>Menyusun materi visual yang informatif dan profesional</li>
-            <li>Menyesuaikan desain dengan kebutuhan bisnis</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Impact</h4>
-
-          <ul>
-            <li>Meningkatkan kualitas komunikasi perusahaan</li>
-            <li>Membantu proses pitching dan presentasi</li>
-            <li>Memberikan kesan profesional kepada klien</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SELECTED WORKS -->
-  <section id="works">
-
-    <h2 class="section-title">SELECTED WORKS</h2>
-
-    <div class="works">
-
-      <div class="work-box">
-        Company Profile Design
-      </div>
-
-      <div class="work-box">
-        Business Presentation Slides
-      </div>
-
-      <div class="work-box">
-        Website Development Project
-      </div>
-
-      <div class="work-box">
-        Invoice & Financial Report Template
-      </div>
-
-      <div class="work-box">
-        Document Layout (MoU / Official Letter)
-      </div>
-
-    </div>
-
-    <div class="small-note">
-      Beberapa karya telah disesuaikan atau disamarkan untuk menjaga kerahasiaan data perusahaan.
-    </div>
-
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-
-    <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <h3>PT Adikara Kapital Indonesia</h3>
-        <span>Staff Admin | Des 2023 – Present</span>
-
-        <p>
-          Mengelola operasional perbankan, transaksi SWIFT,
-          dokumentasi perusahaan, serta pelaporan LKPM.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>PT Pesona Putra Perkasa</h3>
-        <span>Marketing Produk Perbankan | Sep 2023 – Des 2023</span>
-
-        <p>
-          Menawarkan produk perbankan dan menjaga hubungan dengan klien.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>Freelance Web Developer</h3>
-        <span>Juli 2023 – Sep 2023</span>
-
-        <p>
-          Mendesain dan mengembangkan website sesuai kebutuhan klien.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-
-    <h2 class="section-title">SKILLS</h2>
-
-    <div class="skills-container">
-
-      <div class="skill-box">
-
-        <h3>Technical Skills</h3>
-
-        <ul>
-          <li>Microsoft Office (Excel, Word, PowerPoint)</li>
-          <li>SWIFT Transactions (MT103, MT199)</li>
-          <li>Banking Administration</li>
-          <li>Web Development Basic</li>
-        </ul>
-
-      </div>
-
-      <div class="skill-box">
-
-        <h3>Soft Skills</h3>
-
-        <ul>
-          <li>Attention to Detail</li>
-          <li>Communication</li>
-          <li>Problem Solving</li>
-          <li>Team Collaboration</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact-section">
-
-    <h2>LET’S CONNECT</h2>
-
-    <p>
-      Saya terbuka untuk peluang di bidang:
-    </p>
-
-    <p>
-      Banking Administration<br>
-      Financial Operations<br>
-      Corporate Administration
-    </p>
-
-    <div class="contact-links">
-      <a href="mailto:alfnchyaptraaa@gmail.com">
-        Email: alfnchyaptraaa@gmail.com
+  <!-- =========================================================
+       STICKY NAVIGATION
+  ========================================================= -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navigasi Portofolio">
+      <a href="#cover" class="brand">
+        <strong>Alfin Cahya Putra Wibowo</strong>
+        <span>Administrative Staff | Banking Operations</span>
       </a>
 
-      <a href="https://linkedin.com/in/alfnchyaptra/" target="_blank">
-        LinkedIn: linkedin.com/in/alfnchyaptra/
-      </a>
-    </div>
+      <div class="nav-links">
+        <a href="#cover">Cover</a>
+        <a href="#profil">Profil</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#project-1">Project 1</a>
+        <a href="#project-2">Project 2</a>
+        <a href="#project-3">Project 3</a>
+        <a href="#project-4">Project 4</a>
+        <a href="#project-5">Project 5</a>
+        <a href="#project-6">Project 6</a>
+        <a href="#project-7">Project 7</a>
+        <a href="#works">Works</a>
+        <a href="#experience-1">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-  </section>
+  <main>
+    <!-- =========================================================
+         SLIDE 1 — COVER
+    ========================================================= -->
+    <section id="cover" class="slide">
+      <div class="container hero-layout">
+        <div class="hero-panel">
+          <span class="section-kicker">Slide 01 — Portfolio</span>
+          <h1 class="hero-title">Alfin Cahya Putra Wibowo</h1>
+          <p class="hero-headline">Administrative Staff | Banking Operations | Multimedia & Web Support</p>
+          <p class="hero-description">
+            Profesional administrasi dengan pengalaman dalam operasional perbankan perusahaan,
+            dokumentasi bisnis, pelaporan OSS, Coretax, serta dukungan multimedia untuk kebutuhan
+            perusahaan dan klien.
+          </p>
 
+          <div class="button-row">
+            <a href="#project-1" class="btn btn-primary">Lihat Project</a>
+            <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+            <!-- Ganti href di bawah dengan file CV asli, contoh: assets/cv-alfin.pdf -->
+            <a href="#" class="btn btn-secondary">Download CV</a>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <div class="info-card">
+            <span>Location</span>
+            <strong>Jakarta, Indonesia</strong>
+          </div>
+          <div class="info-card">
+            <span>Email</span>
+            <a href="mailto:alfnchyaptraaa@gmail.com">alfnchyaptraaa@gmail.com</a>
+          </div>
+          <div class="info-card">
+            <span>LinkedIn</span>
+            <a href="https://linkedin.com/in/alfnchyaptra/" target="_blank" rel="noopener">linkedin.com/in/alfnchyaptra/</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 2 — RINGKASAN PROFIL
+    ========================================================= -->
+    <section id="profil" class="slide">
+      <div class="container">
+        <span class="section-kicker">Slide 02 — Ringkasan Profil</span>
+        <h2 class="section-title">Profil Profesional</h2>
+        <p class="section-subtitle">
+          Latar belakang administrasi, operasional perbankan, dokumentasi bisnis, dan multimedia
+          yang saling melengkapi untuk mendukung kebutuhan perusahaan secara terstruktur.
+        </p>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Administrasi, Perbankan, dan Dokumentasi</h3>
+            <p>
+              Saya adalah lulusan Multimedia dengan pengalaman profesional di bidang administrasi
+              perbankan, transaksi keuangan, dokumentasi perusahaan, dan korespondensi resmi.
+              Saya terbiasa mengelola rekening bank perusahaan, menangani invoice, menyusun
+              dokumen bisnis, serta mendukung kebutuhan administrasi yang berkaitan dengan klien
+              maupun instansi.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Kombinasi Kemampuan Administratif dan Kreatif</h3>
+            <p>
+              Selain memiliki kemampuan administratif yang kuat, saya juga memiliki latar belakang
+              multimedia yang mendukung pekerjaan kreatif seperti pembuatan company profile,
+              presentasi, desain visual, dan editing. Kombinasi kemampuan administrasi, teknologi,
+              dan komunikasi membuat saya mampu bekerja secara teliti, adaptif, dan terstruktur
+              dalam lingkungan bisnis yang dinamis.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 3 — CORE EXPERTISE
+    ========================================================= -->
+    <section id="expertise" class="slide">
+      <div class="container">
+        <span class="section-kicker">Slide 03 — Core Expertise</span>
+        <h2 class="section-title">Core Expertise</h2>
+        <p class="section-subtitle">
+          Area kompetensi utama yang mendukung pekerjaan administrasi, operasional bisnis,
+          dokumentasi resmi, pelaporan digital, dan kebutuhan komunikasi visual perusahaan.
+        </p>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Administrasi & Operasional Perbankan</h3>
+            <p>Berpengalaman dalam pengelolaan operasional perbankan perusahaan, termasuk pembukaan rekening, dokumentasi regulasi, dan administrasi rekening bank perusahaan.</p>
+          </article>
+
+          <article class="card">
+            <h3>Internet Banking & Token Bank</h3>
+            <p>Terbiasa mengelola dan mengimplementasikan lebih dari 50 token internet banking dari berbagai bank nasional untuk kebutuhan operasional perusahaan.</p>
+          </article>
+
+          <article class="card">
+            <h3>Dokumentasi Bisnis & Surat Resmi</h3>
+            <p>Mampu menyusun dan meninjau dokumen resmi seperti surat perusahaan, Letter of Intent, perjanjian, kontrak, DoA, dan MoU.</p>
+          </article>
+
+          <article class="card">
+            <h3>Invoice & Rekonsiliasi Keuangan</h3>
+            <p>Berpengalaman menangani pembuatan invoice, rekonsiliasi invoice masuk dan keluar, serta penyusunan laporan progres kepada klien.</p>
+          </article>
+
+          <article class="card">
+            <h3>Coretax & Perpajakan Dasar</h3>
+            <p>Mendukung pembuatan dan aktivasi akun Coretax badan maupun perorangan, termasuk pengurusan SKF dan administrasi perpajakan dasar.</p>
+          </article>
+
+          <article class="card">
+            <h3>Pelaporan OSS & LKPM</h3>
+            <p>Terbiasa menyusun dan melaporkan LKPM triwulanan melalui sistem OSS sesuai ketentuan pelaporan yang berlaku.</p>
+          </article>
+
+          <article class="card">
+            <h3>Company Profile & Presentasi Bisnis</h3>
+            <p>Mampu membuat company profile, materi presentasi, dan desain pendukung untuk kebutuhan pengembangan bisnis dan komunikasi klien.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 4 — PROJECT 1
+    ========================================================= -->
+    <section id="project-1" class="slide">
+      <div class="container project-layout">
+        <div>
+          <span class="section-kicker">Slide 04 — Project Highlight</span>
+          <div class="project-number">01</div>
+          <h2 class="section-title">Pengelolaan Administrasi Rekening Bank Perusahaan</h2>
+          <p class="section-subtitle">
+            Mendukung kebutuhan administrasi dan operasional perbankan perusahaan melalui
+            pengelolaan lebih dari 50 rekening bank perusahaan.
+          </p>
+        </div>
+
+        <div class="project-meta">
+          <article class="meta-block">
+            <span>Peran Saya</span>
+            <p>Staff Admin yang bertanggung jawab dalam pengelolaan dokumen, proses administrasi rekening, dan kebutuhan regulasi perbankan.</p>
+          </article>
+
+          <article class="card">
+            <h3>Scope Pekerjaan</h3>
+            <ul>
+              <li>Pembukaan dan pengelolaan rekening bank perusahaan.</li>
+              <li>Dokumentasi regulasi dan kebutuhan administrasi bank.</li>
+              <li>Koordinasi data serta dokumen pendukung perusahaan.</li>
+              <li>Pengelolaan administrasi rekening pada berbagai bank nasional.</li>
+            </ul>
+          </article>
+
+          <article class="meta-block">
+            <span>Output</span>
+            <p>Administrasi rekening perusahaan yang lebih terstruktur, terdokumentasi, dan siap digunakan untuk kebutuhan operasional bisnis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 5 — PROJECT 2
+    ========================================================= -->
+    <section id="project-2" class="slide">
+      <div class="container project-layout">
+        <div>
+          <span class="section-kicker">Slide 05 — Project Highlight</span>
+          <div class="project-number">02</div>
+          <h2 class="section-title">Implementasi Token Internet Banking Perusahaan</h2>
+          <p class="section-subtitle">
+            Pengelolaan akses internet banking yang lebih rapi dan terkontrol untuk berbagai
+            rekening di beberapa bank nasional.
+          </p>
+        </div>
+
+        <div class="project-meta">
+          <article class="meta-block">
+            <span>Peran Saya</span>
+            <p>Mengelola dan mengimplementasikan token internet banking untuk mendukung transaksi serta akses operasional perusahaan.</p>
+          </article>
+
+          <article class="card">
+            <h3>Scope Pekerjaan</h3>
+            <ul>
+              <li>Implementasi lebih dari 50 token internet banking.</li>
+              <li>Pengelolaan token dari BCA, BNI, Sinarmas, UOB, BSI, MNC, KB Bukopin, Danamon, Permata, JTrust, dan bank lainnya.</li>
+              <li>Pendataan, aktivasi, serta koordinasi penggunaan token.</li>
+              <li>Mendukung kelancaran akses internet banking perusahaan.</li>
+            </ul>
+          </article>
+
+          <article class="meta-block">
+            <span>Output</span>
+            <p>Penggunaan token internet banking yang lebih tertata dan mendukung kelancaran operasional keuangan perusahaan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 6 — PROJECT 3
+    ========================================================= -->
+    <section id="project-3" class="slide">
+      <div class="container project-layout">
+        <div>
+          <span class="section-kicker">Slide 06 — Project Highlight</span>
+          <div class="project-number">03</div>
+          <h2 class="section-title">Penyusunan Dokumen Resmi, LOI, Perjanjian, dan Kontrak</h2>
+          <p class="section-subtitle">
+            Penyusunan dokumen resmi untuk komunikasi bisnis, kerja sama dengan klien,
+            dan kebutuhan administratif dengan instansi.
+          </p>
+        </div>
+
+        <div class="project-meta">
+          <article class="meta-block">
+            <span>Peran Saya</span>
+            <p>Menyusun dan meninjau dokumen formal yang digunakan dalam proses bisnis perusahaan.</p>
+          </article>
+
+          <article class="card">
+            <h3>Scope Pekerjaan</h3>
+            <ul>
+              <li>Penyusunan surat resmi perusahaan.</li>
+              <li>Peninjauan Letter of Intent.</li>
+              <li>Penyusunan dokumen perjanjian dan kontrak.</li>
+              <li>Dokumentasi DoA dan MoU.</li>
+              <li>Korespondensi dengan klien maupun instansi pemerintah.</li>
+            </ul>
+          </article>
+
+          <article class="meta-block">
+            <span>Output</span>
+            <p>Dokumen bisnis yang lebih rapi, profesional, dan mendukung proses komunikasi resmi perusahaan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 7 — PROJECT 4
+    ========================================================= -->
+    <section id="project-4" class="slide">
+      <div class="container project-layout">
+        <div>
+          <span class="section-kicker">Slide 07 — Project Highlight</span>
+          <div class="project-number">04</div>
+          <h2 class="section-title">Administrasi Coretax, SKF, dan Perpajakan Dasar</h2>
+          <p class="section-subtitle">
+            Mendukung kebutuhan administrasi perpajakan dasar melalui sistem Coretax
+            untuk badan maupun perorangan.
+          </p>
+        </div>
+
+        <div class="project-meta">
+          <article class="meta-block">
+            <span>Peran Saya</span>
+            <p>Membantu proses pembuatan, aktivasi, dan pengurusan akun serta dokumen pendukung perpajakan.</p>
+          </article>
+
+          <article class="card">
+            <h3>Scope Pekerjaan</h3>
+            <ul>
+              <li>Pembuatan akun Coretax badan dan perorangan.</li>
+              <li>Aktivasi akun Coretax.</li>
+              <li>Pengurusan SKF atau Surat Keterangan Fiskal.</li>
+              <li>Administrasi perpajakan dasar melalui sistem Coretax.</li>
+            </ul>
+          </article>
+
+          <article class="meta-block">
+            <span>Output</span>
+            <p>Proses administrasi perpajakan menjadi lebih terdokumentasi dan dapat ditindaklanjuti sesuai kebutuhan perusahaan maupun klien.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 8 — PROJECT 5
+    ========================================================= -->
+    <section id="project-5" class="slide">
+      <div class="container project-layout">
+        <div>
+          <span class="section-kicker">Slide 08 — Project Highlight</span>
+          <div class="project-number">05</div>
+          <h2 class="section-title">Invoice, Rekonsiliasi, dan Laporan Progres Klien</h2>
+          <p class="section-subtitle">
+            Pengelolaan invoice dan laporan progres yang transparan untuk mendukung
+            komunikasi dengan klien.
+          </p>
+        </div>
+
+        <div class="project-meta">
+          <article class="meta-block">
+            <span>Peran Saya</span>
+            <p>Menangani administrasi invoice serta membantu penyusunan laporan perkembangan pekerjaan kepada klien.</p>
+          </article>
+
+          <article class="card">
+            <h3>Scope Pekerjaan</h3>
+            <ul>
+              <li>Pembuatan invoice.</li>
+              <li>Rekonsiliasi invoice masuk dan keluar.</li>
+              <li>Penyusunan laporan progres kepada klien.</li>
+              <li>Memastikan informasi administrasi tetap jelas, akurat, dan terkini.</li>
+            </ul>
+          </article>
+
+          <article class="meta-block">
+            <span>Output</span>
+            <p>Dokumentasi invoice dan laporan progres yang lebih transparan, terorganisir, dan mudah dipantau oleh pihak terkait.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 9 — PROJECT 6
+    ========================================================= -->
+    <section id="project-6" class="slide">
+      <div class="container project-layout">
+        <div>
+          <span class="section-kicker">Slide 09 — Project Highlight</span>
+          <div class="project-number">06</div>
+          <h2 class="section-title">Pelaporan LKPM Triwulanan melalui OSS</h2>
+          <p class="section-subtitle">
+            Pelaporan kegiatan penanaman modal secara berkala sesuai ketentuan yang berlaku.
+          </p>
+        </div>
+
+        <div class="project-meta">
+          <article class="meta-block">
+            <span>Peran Saya</span>
+            <p>Menyusun dan melaporkan LKPM triwulanan melalui sistem OSS.</p>
+          </article>
+
+          <article class="card">
+            <h3>Scope Pekerjaan</h3>
+            <ul>
+              <li>Pengumpulan data pendukung pelaporan.</li>
+              <li>Penyusunan laporan LKPM.</li>
+              <li>Pelaporan melalui sistem OSS.</li>
+              <li>Menyesuaikan proses pelaporan dengan ketentuan yang berlaku.</li>
+            </ul>
+          </article>
+
+          <article class="meta-block">
+            <span>Output</span>
+            <p>Pelaporan LKPM triwulanan yang tersusun dan disampaikan melalui sistem OSS sesuai kebutuhan perusahaan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 10 — PROJECT 7
+    ========================================================= -->
+    <section id="project-7" class="slide">
+      <div class="container project-layout">
+        <div>
+          <span class="section-kicker">Slide 10 — Project Highlight</span>
+          <div class="project-number">07</div>
+          <h2 class="section-title">Company Profile, Presentasi, dan Materi Desain Bisnis</h2>
+          <p class="section-subtitle">
+            Materi komunikasi visual untuk mendukung pengembangan bisnis, presentasi,
+            dan kebutuhan profesional lainnya.
+          </p>
+        </div>
+
+        <div class="project-meta">
+          <article class="meta-block">
+            <span>Peran Saya</span>
+            <p>Membuat materi visual dan presentasi yang mendukung kebutuhan bisnis perusahaan.</p>
+          </article>
+
+          <article class="card">
+            <h3>Scope Pekerjaan</h3>
+            <ul>
+              <li>Pembuatan company profile.</li>
+              <li>Penyusunan presentasi bisnis.</li>
+              <li>Pembuatan materi desain pendukung.</li>
+              <li>Penyesuaian visual sesuai kebutuhan perusahaan dan klien.</li>
+            </ul>
+          </article>
+
+          <article class="meta-block">
+            <span>Output</span>
+            <p>Materi bisnis yang lebih representatif, informatif, dan siap digunakan untuk kebutuhan komunikasi profesional.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 11 — SELECTED WORKS
+    ========================================================= -->
+    <section id="works" class="slide">
+      <div class="container">
+        <span class="section-kicker">Slide 11 — Selected Works</span>
+        <h2 class="section-title">Selected Works</h2>
+        <p class="section-subtitle">
+          Beberapa kategori karya dan hasil pekerjaan yang merepresentasikan kemampuan saya
+          dalam bidang administrasi, presentasi bisnis, desain visual, dan pengembangan website.
+        </p>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Company Profile</h3>
+            <p>Materi profil perusahaan untuk kebutuhan komunikasi bisnis, pengenalan perusahaan, dan presentasi kepada pihak eksternal.</p>
+          </article>
+
+          <article class="card">
+            <h3>Presentasi Bisnis</h3>
+            <p>Deck presentasi yang disusun untuk mendukung penyampaian informasi secara rapi, visual, dan profesional.</p>
+          </article>
+
+          <article class="card">
+            <h3>Materi Desain Perusahaan</h3>
+            <p>Desain pendukung untuk kebutuhan komunikasi visual perusahaan dan klien.</p>
+          </article>
+
+          <article class="card">
+            <h3>Template Invoice atau Laporan Administrasi</h3>
+            <p>Format dokumen administrasi yang membantu proses pencatatan, pelaporan, dan monitoring pekerjaan.</p>
+          </article>
+
+          <article class="card">
+            <h3>Materi Multimedia</h3>
+            <p>Dukungan editing audio dan video untuk kebutuhan kreatif, dokumentasi, maupun komunikasi visual.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 12 — EXPERIENCE 1
+    ========================================================= -->
+    <section id="experience-1" class="slide">
+      <div class="container">
+        <span class="section-kicker">Slide 12 — Experience</span>
+
+        <article class="card experience-card">
+          <div>
+            <h2 class="experience-company">PT. Adikara Kapital Indonesia</h2>
+            <p class="role">Staff Admin</p>
+            <p class="date-location">Desember 2023 – Sekarang<br />Jakarta, Indonesia</p>
+          </div>
+
+          <div>
+            <ul>
+              <li>Mengelola operasional perbankan perusahaan, termasuk pembukaan rekening, dokumentasi regulasi, dan administrasi lebih dari 50 rekening bank perusahaan.</li>
+              <li>Mengelola serta mengimplementasikan lebih dari 50 token internet banking dari berbagai bank nasional.</li>
+              <li>Menyusun dan meninjau surat resmi, Letter of Intent, perjanjian, kontrak, DoA, dan MoU dengan klien maupun instansi pemerintah.</li>
+              <li>Menangani administrasi Coretax, SKF, invoice, rekonsiliasi, laporan progres klien, pelaporan LKPM melalui OSS, serta pembuatan company profile dan materi presentasi bisnis.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 13 — EXPERIENCE 2
+    ========================================================= -->
+    <section id="experience-2" class="slide">
+      <div class="container">
+        <span class="section-kicker">Slide 13 — Experience</span>
+
+        <article class="card experience-card">
+          <div>
+            <h2 class="experience-company">PT. Pesona Putra Perkasa</h2>
+            <p class="role">Staff Telemarketing — Produk Perbankan</p>
+            <p class="date-location">September 2023 – Desember 2023<br />Tangerang, Indonesia</p>
+          </div>
+
+          <div>
+            <ul>
+              <li>Mempromosikan dan menawarkan produk pendanaan serta produk perbankan dari Bank CTBC kepada calon klien.</li>
+              <li>Melakukan presentasi dan pertemuan dengan klien untuk mendukung pencapaian target penjualan.</li>
+              <li>Menjaga hubungan dengan nasabah untuk memastikan kepuasan dan loyalitas klien.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 14 — EXPERIENCE 3
+    ========================================================= -->
+    <section id="experience-3" class="slide">
+      <div class="container">
+        <span class="section-kicker">Slide 14 — Experience</span>
+
+        <article class="card experience-card">
+          <div>
+            <h2 class="experience-company">Freelance</h2>
+            <p class="role">Web Developer</p>
+            <p class="date-location">Juli 2023 – September 2023</p>
+          </div>
+
+          <div>
+            <ul>
+              <li>Mendesain dan mengembangkan website sesuai kebutuhan klien.</li>
+              <li>Memastikan website berjalan dengan baik, termasuk integrasi database.</li>
+              <li>Memberikan dukungan teknis serta menjaga hubungan kerja sama dengan klien.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 15 — SKILLS
+    ========================================================= -->
+    <section id="skills" class="slide">
+      <div class="container">
+        <span class="section-kicker">Slide 15 — Skills</span>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">
+          Kompetensi teknis, administratif, kreatif, digital, dan interpersonal yang mendukung
+          eksekusi pekerjaan secara rapi, akurat, dan profesional.
+        </p>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Technical & Administrative Skills</h3>
+            <div class="badge-row">
+              <span class="badge">Administrasi & Operasional Perbankan</span>
+              <span class="badge">Pengelolaan Rekening Bank Perusahaan</span>
+              <span class="badge">Token Internet Banking</span>
+              <span class="badge">Pembuatan Invoice</span>
+              <span class="badge">Rekonsiliasi Invoice</span>
+              <span class="badge">Pelaporan OSS / LKPM</span>
+              <span class="badge">Administrasi Coretax</span>
+              <span class="badge">Perpajakan Dasar</span>
+              <span class="badge">Surat Resmi & Dokumen Bisnis</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Creative & Digital Skills</h3>
+            <div class="badge-row">
+              <span class="badge">Web Development</span>
+              <span class="badge">Web Editing</span>
+              <span class="badge">Canva</span>
+              <span class="badge">Desain Presentasi</span>
+              <span class="badge">Company Profile</span>
+              <span class="badge">Copywriting</span>
+              <span class="badge">AI Prompting</span>
+              <span class="badge">Pengolahan Audio & Video</span>
+              <span class="badge">Editing Multimedia</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Tools & Software</h3>
+            <div class="badge-row">
+              <span class="badge">Microsoft Excel</span>
+              <span class="badge">Microsoft Word</span>
+              <span class="badge">Microsoft PowerPoint</span>
+              <span class="badge">Canva</span>
+              <span class="badge">OSS</span>
+              <span class="badge">Coretax</span>
+              <span class="badge">Internet Banking Platform</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Soft Skills</h3>
+            <div class="badge-row">
+              <span class="badge">Pemecahan Masalah</span>
+              <span class="badge">Manajemen Waktu</span>
+              <span class="badge">Berpikir Kreatif</span>
+              <span class="badge">Kerja Sama Tim</span>
+              <span class="badge">Adaptabilitas</span>
+              <span class="badge">Komunikasi</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 16 — CLOSING
+    ========================================================= -->
+    <section id="closing" class="slide">
+      <div class="container">
+        <span class="section-kicker">Slide 16 — Closing</span>
+        <div class="card contact-card">
+          <h2 class="contact-name">Let’s Build Something Professional Together</h2>
+          <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+            Dengan pengalaman di bidang administrasi
+            perbankan, dokumentasi bisnis, pelaporan digital, multimedia, dan web development,
+            saya siap berkontribusi dalam pekerjaan maupun proyek yang membutuhkan ketelitian,
+            komunikasi yang baik, serta eksekusi yang terstruktur.
+          </p>
+          <p class="muted">
+            Saya terbuka untuk peluang kerja, kolaborasi profesional, maupun project yang relevan
+            dengan bidang administrasi, operasional bisnis, presentasi, desain.
+          </p>
+
+          <div class="button-row" style="justify-content: center;">
+            <a href="#contact" class="btn btn-primary">Hubungi Saya</a>
+            <a href="#cover" class="btn btn-secondary">Kembali ke Atas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIDE 17 — CONTACT ME
+    ========================================================= -->
+    <section id="contact" class="slide">
+      <div class="container">
+        <span class="section-kicker">Slide 17 — Contact Me</span>
+        <div class="card contact-card">
+          <h2 class="contact-name">Contact Me</h2>
+          <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+            Terbuka untuk diskusi profesional, peluang kerja, kolaborasi, maupun project yang relevan.
+          </p>
+
+          <div class="divider"></div>
+
+          <h3>Alfin Cahya Putra Wibowo</h3>
+          <p class="muted">Jakarta, Indonesia</p>
+
+          <div class="contact-links">
+            <a href="mailto:alfnchyaptraaa@gmail.com" class="btn btn-primary">Email</a>
+            <a href="https://linkedin.com/in/alfnchyaptra/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+          </div>
+
+          <div class="badge-row" style="justify-content: center; margin-top: 28px;">
+            <span class="badge">alfnchyaptraaa@gmail.com</span>
+            <span class="badge">linkedin.com/in/alfnchyaptra/</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
   <footer>
-    © 2026 Alfin Cahya Putra Wibowo — Portfolio Website
+    <p>© 2026 Alfin Cahya Putra Wibowo - Portfolio</p>
   </footer>
-
 </body>
 </html>
